@@ -1,0 +1,16 @@
+﻿@model WebApp.Models.Admin.BusinessManagerCreateEditVM
+
+@{
+    Layout = null;
+}
+
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="form-group">
+    <label asp-for="BusinessManager.AppUserId" class="control-label"></label>
+    <select asp-for="BusinessManager.AppUserId" class="form-control" asp-items="Model.AppUserSelectList"></select>
+</div>
+<div class="form-group">
+    <label asp-for="BusinessManager.BusinessId" class="control-label"></label>
+    <select asp-for="BusinessManager.BusinessId" class="form-control" asp-items="Model.BusinessSelectList"></select>
+</div>

@@ -1,0 +1,14 @@
+﻿@model WebApp.Models.Admin.ProductPictureCreateEditVM
+
+@{
+    Layout = null;
+}
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="form-group">
+    <label asp-for="ProductPicture.PictureId" class="control-label"></label>
+    <select asp-for="ProductPicture.PictureId" class="form-control" asp-items="Model.PictureSelectList"></select>
+</div>
+<div class="form-group">
+    <label asp-for="ProductPicture.ProductId" class="control-label"></label>
+    <select asp-for="ProductPicture.ProductId" class="form-control" asp-items="Model.ProductSelectList"></select>
+</div>

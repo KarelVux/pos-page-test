@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  
+  pos-2023-db:
+    container_name: pos-2023-db
+    image: "postgres:15.2-bullseye"
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    ports:
+      # external:internal
+      - "5447:5432"
+    volumes:
+      - pos-2023-db-postgres-volume:/var/lib/postgresql/data
+
+  pos-2023-app:
+    container_name: pos-2023-app
+    build:
+      # context: ./POS
+      dockerfile: Dockerfile
+    ports:
+      # external:internal
+      - "8000:80"
+    
+    depends_on:
+      - pos-2023-db
+    
+    environment:
+      - ConnectionStrings:DefaultConnection=Host=host.docker.internal:5447;Database=pos-db;Username=postgres;Password=postgres
+      - DataInit:DropDatabase=true
+      - DataInit:MigrateDatabase=true
+      - DataInit:SeedIdentity=true
+      - DataInit:SeedData=true
+
+
+volumes:
+  pos-2023-db-postgres-volume:

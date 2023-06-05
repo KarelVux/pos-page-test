@@ -1,0 +1,45 @@
+﻿@model WebApp.Models.Admin.InvoiceCreateEditVM
+
+@{
+    Layout = null;
+}
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="form-group">
+    <label asp-for="Invoice.FinalTotalPrice" class="control-label"></label>
+    <input asp-for="Invoice.FinalTotalPrice" class="form-control"/>
+    <span asp-validation-for="Invoice.FinalTotalPrice" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Invoice.TaxAmount" class="control-label"></label>
+    <input asp-for="Invoice.TaxAmount" class="form-control"/>
+    <span asp-validation-for="Invoice.TaxAmount" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Invoice.TotalPriceWithoutTax" class="control-label"></label>
+    <input asp-for="Invoice.TotalPriceWithoutTax" class="form-control"/>
+    <span asp-validation-for="Invoice.TotalPriceWithoutTax" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Invoice.TotalPriceWithoutTax" class="control-label"></label>
+    <input asp-for="Invoice.TotalPriceWithoutTax" class="form-control"/>
+    <span asp-validation-for="Invoice.TotalPriceWithoutTax" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Invoice.CreationTime" class="control-label"></label>
+    <input asp-for="Invoice.CreationTime" class="form-control"/>
+    <span asp-validation-for="Invoice.CreationTime" class="text-danger"></span>
+</div>
+<div class="form-group form-check">
+    <label class="form-check-label">
+        <input class="form-check-input" asp-for="Invoice.PaymentCompleted"/> @Html.DisplayNameFor(model => model.Invoice.PaymentCompleted)
+    </label>
+</div>
+<div class="form-group">
+    <label asp-for="Invoice.AppUserId" class="control-label"></label>
+    <select asp-for="Invoice.AppUserId" class="form-control" asp-items="Model.AppUserSelectList"></select>
+</div>
+<div class="form-group">
+    <label asp-for="Invoice.BusinessId" class="control-label"></label>
+    <select asp-for="Invoice.BusinessId" class="form-control" asp-items="Model.BusinessSelectList"></select>
+</div>

@@ -1,0 +1,49 @@
+﻿@model WebApp.Models.Admin.InvoiceRowCreateEditVM
+
+@{
+    Layout = null;
+}
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="form-group">
+    <label asp-for="InvoiceRow.FinalProductPrice" class="control-label"></label>
+    <input asp-for="InvoiceRow.FinalProductPrice" class="form-control"/>
+    <span asp-validation-for="InvoiceRow.FinalProductPrice" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="InvoiceRow.ProductUnitCount" class="control-label"></label>
+    <input asp-for="InvoiceRow.ProductUnitCount" class="form-control"/>
+    <span asp-validation-for="InvoiceRow.ProductUnitCount" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="InvoiceRow.ProductPricePerUnit" class="control-label"></label>
+    <input asp-for="InvoiceRow.ProductPricePerUnit" class="form-control"/>
+    <span asp-validation-for="InvoiceRow.ProductPricePerUnit" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="InvoiceRow.TaxPercent" class="control-label"></label>
+    <input asp-for="InvoiceRow.TaxPercent" class="form-control"/>
+    <span asp-validation-for="InvoiceRow.TaxPercent" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="InvoiceRow.TaxAmountFromPercent" class="control-label"></label>
+    <input asp-for="InvoiceRow.TaxAmountFromPercent" class="form-control"/>
+    <span asp-validation-for="InvoiceRow.TaxAmountFromPercent" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="InvoiceRow.Currency" class="control-label"></label>
+    <input asp-for="InvoiceRow.Currency" class="form-control"/>
+    <span asp-validation-for="InvoiceRow.Currency" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="InvoiceRow.Comment" class="control-label"></label>
+    <input asp-for="InvoiceRow.Comment" class="form-control"/>
+    <span asp-validation-for="InvoiceRow.Comment" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="InvoiceRow.ProductId" class="control-label"></label>
+    <select asp-for="InvoiceRow.ProductId" class="form-control" asp-items="Model.ProductSelectList"></select>
+</div>
+<div class="form-group">
+    <label asp-for="InvoiceRow.InvoiceId" class="control-label"></label>
+    <select asp-for="InvoiceRow.InvoiceId" class="form-control" asp-items="Model.InvoiceSelectList"></select>
+</div>

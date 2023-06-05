@@ -1,0 +1,55 @@
+﻿@model WebApp.Models.Admin.BusinessCreateEditVM
+
+@{
+    Layout = null;
+}
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="form-group">
+    <label asp-for="Business.Name" class="control-label"></label>
+    <input asp-for="Business.Name" class="form-control"/>
+    <span asp-validation-for="Business.Name" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Business.Description" class="control-label"></label>
+    <input asp-for="Business.Description" class="form-control"/>
+    <span asp-validation-for="Business.Description" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Business.Rating" class="control-label"></label>
+    <input asp-for="Business.Rating" class="form-control"/>
+    <span asp-validation-for="Business.Rating" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Business.Longitude" class="control-label"></label>
+    <input asp-for="Business.Longitude" class="form-control"/>
+    <span asp-validation-for="Business.Longitude" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Business.Latitude" class="control-label"></label>
+    <input asp-for="Business.Latitude" class="form-control"/>
+    <span asp-validation-for="Business.Latitude" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Business.Address" class="control-label"></label>
+    <input asp-for="Business.Address" class="form-control"/>
+    <span asp-validation-for="Business.Address" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Business.PhoneNumber" class="control-label"></label>
+    <input asp-for="Business.PhoneNumber" class="form-control"/>
+    <span asp-validation-for="Business.PhoneNumber" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Business.Email" class="control-label"></label>
+    <input asp-for="Business.Email" class="form-control"/>
+    <span asp-validation-for="Business.Email" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Business.BusinessCategoryId" class="control-label"></label>
+    <select asp-for="Business.BusinessCategoryId" class="form-control" asp-items="Model.BusinessCategorySelectList"></select>
+</div>
+<div class="form-group">
+    <label asp-for="Business.SettlementId" class="control-label"></label>
+    <select asp-for="Business.SettlementId" class="form-control" asp-items="Model.SettlementSelectList"></select>
+</div>

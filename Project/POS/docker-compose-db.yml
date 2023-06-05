@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  pos-db:
+    container_name: pos-db
+    image: "postgres:15.2-bullseye"
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    ports:
+      # external:internal
+      - "5446:5432"
+    volumes:
+      - pos-db-postgres-volume:/var/lib/postgresql/data
+
+volumes:
+  pos-db-postgres-volume:
+
